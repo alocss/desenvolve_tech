@@ -1,0 +1,29 @@
+{
+  "name": "desenvolve-tech",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev -w frontend",
+    "dev:backend": "npm run start:dev -w backend",
+    "build": "npm run build -w frontend && npm run build -w backend",
+    "lint": "biome check . && npm run lint -w frontend && npm run lint -w backend -- --max-warnings=0",
+    "lint:fix": "biome check --write . && npm run lint -w frontend && npm run lint -w backend",
+    "format": "biome format --write .",
+    "test": "npm run test -w backend && npm run test:unit -w frontend",
+    "test:cov": "npm run test:cov -w backend && npm run test:unit -w frontend -- --coverage",
+    "test:e2e": "npm run test:e2e -w backend && npm run test:e2e -w frontend",
+    "knip": "knip",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.1.2",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "husky": "^9.1.7",
+    "knip": "^5.42.0"
+  }
+}
