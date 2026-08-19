@@ -3,9 +3,13 @@
   "ignore": [".claude/**"],
   "workspaces": {
     "frontend": {
-      "entry": ["src/app/**/{page,layout,loading,error,not-found,route}.tsx"],
+      "entry": [
+        "src/app/**/{page,layout,loading,error,not-found,route}.tsx",
+        "src/components/ui/**/*.tsx",
+        "src/lib/utils.ts"
+      ],
       "project": ["src/**/*.{ts,tsx}", "e2e/**/*.ts"],
-      "ignoreDependencies": ["tailwindcss", "@vitest/coverage-v8"]
+      "ignoreDependencies": ["tailwindcss", "@vitest/coverage-v8", "shadcn", "tw-animate-css"]
     },
     "backend": {
       "entry": ["src/main.ts", "test/**/*.e2e-spec.ts"],
