@@ -27,7 +27,7 @@ describe('Home', () => {
       'mailto:contato@desenvolvetech.com.br',
     );
     expect(screen.getByText('Conhecer os serviços').closest('a')?.getAttribute('href')).toBe(
-      '#servicos',
+      '/servicos',
     );
   });
 });

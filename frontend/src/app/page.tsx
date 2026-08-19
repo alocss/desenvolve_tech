@@ -1,30 +1,8 @@
-import { BarChart3, Code2, Settings2, Smartphone } from 'lucide-react';
+import Link from 'next/link';
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal';
 import { ServiceCard } from '@/components/service-card';
 import { Button } from '@/components/ui/button';
-
-const services = [
-  {
-    icon: Code2,
-    title: 'Desenvolvimento de sites',
-    description: 'Sites rápidos, responsivos e construídos para converter visitantes em clientes.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Desenvolvimento de aplicativos',
-    description: 'Apps sob medida para Android, iOS ou web — do primeiro protótipo ao lançamento.',
-  },
-  {
-    icon: Settings2,
-    title: 'Soluções tecnológicas',
-    description: 'Sistemas e automações desenhados para o seu processo, não o contrário.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Análise de dados',
-    description: 'Dashboards e relatórios que transformam dados em decisões mais rápidas.',
-  },
-];
+import { services } from '@/lib/services';
 
 export default function Home() {
   return (
@@ -56,7 +34,7 @@ export default function Home() {
             <Button
               size="lg"
               variant="outline"
-              render={<a href="#servicos" />}
+              render={<Link href="/servicos" />}
               nativeButton={false}
             >
               Conhecer os serviços
@@ -65,7 +43,7 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <section id="servicos" className="px-6 py-24 sm:py-32">
+      <section className="px-6 py-24 sm:py-32">
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">O que fazemos</h2>
@@ -76,7 +54,7 @@ export default function Home() {
           </div>
           <RevealGroup className="mt-16 grid gap-6 sm:grid-cols-2">
             {services.map((service) => (
-              <RevealItem key={service.title}>
+              <RevealItem key={service.slug}>
                 <ServiceCard {...service} />
               </RevealItem>
             ))}
