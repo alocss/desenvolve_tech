@@ -24,7 +24,7 @@ describe('Home', () => {
   it('tem CTA de orçamento e de serviços', () => {
     render(<Home />);
     expect(screen.getByText('Solicitar orçamento').closest('a')?.getAttribute('href')).toBe(
-      'mailto:contato@desenvolvetech.com.br',
+      '/contato',
     );
     expect(screen.getByText('Conhecer os serviços').closest('a')?.getAttribute('href')).toBe(
       '/servicos',

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const navItems = [
   { href: '/servicos', label: 'Serviços' },
@@ -23,6 +24,9 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <Button size="sm" render={<Link href="/contato" />} nativeButton={false}>
+            Contato
+          </Button>
         </nav>
       </div>
     </header>

@@ -24,11 +24,7 @@ export default function Home() {
             empresas e prestadores de serviço que querem resultado, não só presença digital.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Button
-              size="lg"
-              render={<a href="mailto:contato@desenvolvetech.com.br" />}
-              nativeButton={false}
-            >
+            <Button size="lg" render={<Link href="/contato" />} nativeButton={false}>
               Solicitar orçamento
             </Button>
             <Button
