@@ -17,7 +17,7 @@
     "test:cov": "npm run test:cov -w backend && npm run test:unit -w frontend -- --coverage",
     "test:e2e": "npm run test:e2e -w backend && npm run test:e2e -w frontend",
     "knip": "knip",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.2",
