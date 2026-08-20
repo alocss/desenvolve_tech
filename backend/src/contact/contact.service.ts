@@ -1,13 +1,18 @@
-import { Injectable, Logger } from '@nestjs/common';
+import * as dns from 'node:dns';
+import { Injectable, Logger, type OnModuleInit } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
 import type { CreateContactDto } from './dto/create-contact.dto';
 
 const SMTP_TIMEOUT_MS = 10_000;
 
 @Injectable()
-export class ContactService {
+export class ContactService implements OnModuleInit {
   private readonly logger = new Logger(ContactService.name);
-  private readonly transporter = this.buildTransporter();
+  private transporter: nodemailer.Transporter | null = null;
+
+  async onModuleInit() {
+    this.transporter = await this.buildTransporter();
+  }
 
   async submit(dto: CreateContactDto): Promise<{ received: boolean }> {
     if (dto.website) {
@@ -48,13 +53,33 @@ export class ContactService {
     return { received: true };
   }
 
-  private buildTransporter() {
+  private async buildTransporter() {
     const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD } = process.env;
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
       return null;
     }
+
+    // O nodemailer decide se tenta resolver o host em IPv4 checando as
+    // interfaces de rede locais (os.networkInterfaces()) — em ambientes
+    // containerizados (ex.: Railway) essa checagem erra e ele pula direto
+    // para IPv6, que costuma ser inalcançável nesses ambientes. Resolvemos
+    // o IPv4 nós mesmos para não depender dessa heurística.
+    let host = SMTP_HOST;
+    try {
+      const [address] = await dns.promises.resolve4(SMTP_HOST);
+      if (address) host = address;
+    } catch (error) {
+      this.logger.warn(
+        `Não foi possível resolver IPv4 de ${SMTP_HOST} — usando hostname direto.`,
+        error,
+      );
+    }
+
     return nodemailer.createTransport({
-      host: SMTP_HOST,
+      host,
+      // servername garante que o TLS valide o certificado contra o
+      // hostname real, mesmo conectando por IP.
+      tls: { servername: SMTP_HOST },
       port: Number(SMTP_PORT),
       secure: Number(SMTP_PORT) === 465,
       auth: { user: SMTP_USER, pass: SMTP_PASSWORD },
