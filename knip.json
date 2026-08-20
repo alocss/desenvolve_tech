@@ -1,6 +1,7 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
   "ignore": [".claude/**"],
+  "ignoreBinaries": ["lhci"],
   "workspaces": {
     "frontend": {
       "entry": [
@@ -9,7 +10,13 @@
         "src/lib/utils.ts"
       ],
       "project": ["src/**/*.{ts,tsx}", "e2e/**/*.ts"],
-      "ignoreDependencies": ["tailwindcss", "@vitest/coverage-v8", "shadcn", "tw-animate-css"]
+      "ignoreDependencies": [
+        "tailwindcss",
+        "@vitest/coverage-v8",
+        "shadcn",
+        "tw-animate-css",
+        "@lhci/cli"
+      ]
     },
     "backend": {
       "entry": ["src/main.ts", "test/**/*.e2e-spec.ts"],

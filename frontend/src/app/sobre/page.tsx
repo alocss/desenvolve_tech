@@ -1,6 +1,6 @@
 import { Handshake, LineChart, Search, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
-import { Reveal, RevealGroup, RevealItem } from '@/components/reveal';
+import { RevealGroup, RevealItem } from '@/components/reveal';
 import { ServiceCard } from '@/components/service-card';
 
 export const metadata: Metadata = {
@@ -38,9 +38,9 @@ const principles = [
 
 export default function Sobre() {
   return (
-    <main className="flex flex-1 flex-col">
+    <main id="main-content" className="flex flex-1 flex-col">
       <section className="px-6 pt-20 pb-8 text-center sm:pt-28">
-        <Reveal className="mx-auto flex max-w-2xl flex-col items-center">
+        <div className="hero-enter mx-auto flex max-w-2xl flex-col items-center">
           <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
             Quem somos
           </h1>
@@ -50,17 +50,17 @@ export default function Sobre() {
             deles — não por falta de necessidade, mas por falta de um parceiro técnico que fale a
             língua deles.
           </p>
-        </Reveal>
+        </div>
       </section>
 
       <section className="px-6 py-16">
-        <Reveal className="mx-auto max-w-2xl rounded-2xl border border-border/60 bg-card/40 p-8 text-center sm:p-10">
+        <div className="hero-enter mx-auto max-w-2xl rounded-2xl border border-border/60 bg-card/40 p-8 text-center sm:p-10">
           <p className="text-xs font-medium tracking-wide text-primary uppercase">Nossa missão</p>
           <p className="mt-4 text-xl font-medium text-balance sm:text-2xl">
             Desenvolver soluções tecnológicas sob medida que resolvem problemas reais — sem
             complexidade desnecessária, sem prometer o que não vamos entregar.
           </p>
-        </Reveal>
+        </div>
       </section>
 
       <section className="px-6 py-16 sm:py-24">

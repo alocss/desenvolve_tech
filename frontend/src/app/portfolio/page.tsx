@@ -1,7 +1,7 @@
 import { FolderKanban } from 'lucide-react';
 import type { Metadata } from 'next';
 import { CaseCard } from '@/components/case-card';
-import { Reveal, RevealGroup, RevealItem } from '@/components/reveal';
+import { RevealGroup, RevealItem } from '@/components/reveal';
 import { Button } from '@/components/ui/button';
 import {
   Empty,
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
 
 export default function Portfolio() {
   return (
-    <main className="flex flex-1 flex-col">
+    <main id="main-content" className="flex flex-1 flex-col">
       <section className="px-6 pt-20 pb-8 text-center sm:pt-28">
-        <Reveal className="mx-auto flex max-w-2xl flex-col items-center">
+        <div className="hero-enter mx-auto flex max-w-2xl flex-col items-center">
           <h1 className="text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
             Portfólio
           </h1>
           <p className="mt-4 text-lg text-muted-foreground text-balance">
             Projetos que desenvolvemos para empresas e prestadores de serviços.
           </p>
-        </Reveal>
+        </div>
       </section>
 
       <section className="px-6 py-16">
