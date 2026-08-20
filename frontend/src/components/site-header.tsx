@@ -1,6 +1,9 @@
 import Link from 'next/link';
 
-const navItems = [{ href: '/servicos', label: 'Serviços' }];
+const navItems = [
+  { href: '/servicos', label: 'Serviços' },
+  { href: '/sobre', label: 'Sobre' },
+];
 
 export function SiteHeader() {
   return (
