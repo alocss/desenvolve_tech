@@ -11,7 +11,7 @@
       "startServerCommand": "npm run start -w frontend",
       "startServerReadyPattern": "Ready in",
       "startServerReadyTimeout": 30000,
-      "numberOfRuns": 1
+      "numberOfRuns": 3
     },
     "assert": {
       "assertions": {
