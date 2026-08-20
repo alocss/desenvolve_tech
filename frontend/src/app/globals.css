@@ -144,3 +144,33 @@
     @apply font-sans;
   }
 }
+
+/**
+ * Entrada em CSS puro para o conteúdo acima da dobra (hero de cada página).
+ * Ao contrário do <Reveal> (Framer Motion), não depende da hidratação do
+ * React — o navegador começa a pintar assim que o CSS carrega, sem esperar
+ * JS. Usar Framer Motion num elemento candidato a LCP atrasa a métrica até
+ * a hidratação terminar; ver Issue #8.
+ */
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-enter {
+  animation: hero-enter var(--duration-slow) var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter {
+    animation: none;
+  }
+}

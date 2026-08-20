@@ -15,6 +15,7 @@
       "!**/node_modules",
       "!**/playwright-report",
       "!**/test-results",
+      "!**/.lighthouseci",
       "!frontend/next-env.d.ts",
       "!frontend/public",
       "!frontend/src/components/ui",

@@ -1,18 +1,24 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Reveal, RevealGroup, RevealItem } from '@/components/reveal';
+import { RevealGroup, RevealItem } from '@/components/reveal';
 import { ServiceCard } from '@/components/service-card';
 import { Button } from '@/components/ui/button';
 import { services } from '@/lib/services';
 
+export const metadata: Metadata = {
+  description:
+    'Desenvolvemos sites, aplicativos e soluções tecnológicas guiadas por dados para empresas e prestadores de serviço.',
+};
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main id="main-content" className="flex min-h-screen flex-col">
       <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-6 text-center">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,color-mix(in_oklch,var(--primary),transparent_82%),transparent)]"
         />
-        <Reveal className="flex flex-col items-center">
+        <div className="hero-enter flex flex-col items-center">
           <p className="text-sm font-medium tracking-wide text-primary uppercase">
             Desenvolve Tech
           </p>
@@ -36,7 +42,7 @@ export default function Home() {
               Conhecer os serviços
             </Button>
           </div>
-        </Reveal>
+        </div>
       </section>
 
       <section className="px-6 py-24 sm:py-32">
