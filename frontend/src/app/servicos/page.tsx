@@ -1,5 +1,6 @@
 import { CheckCircle2 } from 'lucide-react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
 import { Button } from '@/components/ui/button';
 import { services } from '@/lib/services';
@@ -68,12 +69,7 @@ export default function Servicos() {
         <p className="mx-auto mt-3 max-w-md text-muted-foreground">
           Fale com a gente e vamos entender juntos qual serviço faz sentido para o seu momento.
         </p>
-        <Button
-          size="lg"
-          className="mt-6"
-          render={<a href="mailto:contato@desenvolvetech.com.br" />}
-          nativeButton={false}
-        >
+        <Button size="lg" className="mt-6" render={<Link href="/contato" />} nativeButton={false}>
           Solicitar orçamento
         </Button>
       </section>

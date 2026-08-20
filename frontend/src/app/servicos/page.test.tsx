@@ -23,7 +23,7 @@ describe('Servicos', () => {
   it('tem CTA de orçamento no final', () => {
     render(<Servicos />);
     expect(screen.getByText('Solicitar orçamento').closest('a')?.getAttribute('href')).toBe(
-      'mailto:contato@desenvolvetech.com.br',
+      '/contato',
     );
   });
 });

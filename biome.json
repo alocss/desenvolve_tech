@@ -17,6 +17,7 @@
       "!**/test-results",
       "!frontend/next-env.d.ts",
       "!frontend/public",
+      "!frontend/src/components/ui",
       "!.claude"
     ]
   },
@@ -43,6 +44,11 @@
   "overrides": [
     {
       "includes": ["backend/**"],
+      "javascript": {
+        "parser": {
+          "unsafeParameterDecoratorsEnabled": true
+        }
+      },
       "linter": {
         "rules": {
           "style": {
