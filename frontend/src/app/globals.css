@@ -51,7 +51,6 @@
   --duration-slow: var(--duration-slow);
   --ease-out: var(--ease-out);
   --ease-in-out: var(--ease-in-out);
-  --ease-spring: var(--ease-spring);
 }
 
 :root {
@@ -130,7 +129,6 @@
   --duration-slow: 400ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.32, 0.72, 0, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @layer base {

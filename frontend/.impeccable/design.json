@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-21T00:00:00.000Z",
+  "title": "Design System: Desenvolve Tech",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Signal Teal",
+        "canonical": "oklch(0.72 0.13 195)",
+        "tonalRamp": [
+          "oklch(0.20 0.05 195)",
+          "oklch(0.30 0.07 195)",
+          "oklch(0.40 0.09 195)",
+          "oklch(0.50 0.11 195)",
+          "oklch(0.60 0.12 195)",
+          "oklch(0.72 0.13 195)",
+          "oklch(0.85 0.09 195)",
+          "oklch(0.95 0.04 195)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Console Black",
+        "canonical": "oklch(0.15 0.025 250)",
+        "tonalRamp": [
+          "oklch(0.10 0.02 250)",
+          "oklch(0.15 0.025 250)",
+          "oklch(0.22 0.025 250)",
+          "oklch(0.30 0.02 250)",
+          "oklch(0.45 0.02 250)",
+          "oklch(0.65 0.02 250)",
+          "oklch(0.80 0.015 250)",
+          "oklch(0.95 0.01 250)"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Elevated Panel",
+        "canonical": "oklch(0.19 0.025 250)"
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Quiet Gray",
+        "canonical": "oklch(0.65 0.03 235)"
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(1 0 0 / 10%)"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "H1 do hero de cada página." },
+      "title": { "displayName": "Title", "purpose": "Títulos de seção (h2)." },
+      "body": { "displayName": "Body", "purpose": "Parágrafos e descrições." },
+      "label": { "displayName": "Label", "purpose": "Eyebrow/rótulos curtos, uppercase." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "duration-fast", "value": "150ms", "purpose": "Hover de links de navegação." },
+      {
+        "name": "duration-base",
+        "value": "250ms",
+        "purpose": "Transições de cor/borda em cards e botões."
+      },
+      { "name": "duration-slow", "value": "400ms", "purpose": "Entrada do hero (.hero-enter)." },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Easing padrão de saída de estado."
+      }
+    ],
+    "breakpoints": [{ "name": "sm", "value": "640px" }]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal (ex.: \"Solicitar orçamento\").",
+      "html": "<button class=\"ds-btn-primary\">Solicitar orçamento</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 36px; padding: 8px 16px; border: none; border-radius: 10px; background: oklch(0.72 0.13 195); color: oklch(0.15 0.03 200); font-size: 14px; font-weight: 500; font-family: Geist, ui-sans-serif, system-ui; cursor: pointer; transition: background 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.15s; } .ds-btn-primary:hover { background: color-mix(in oklch, oklch(0.72 0.13 195), transparent 20%); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px oklch(0.72 0.13 195 / 50%); } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "CTA secundário (ex.: \"Conhecer os serviços\").",
+      "html": "<button class=\"ds-btn-outline\">Conhecer os serviços</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 8px 16px; border: 1px solid oklch(1 0 0 / 10%); border-radius: 10px; background: transparent; color: oklch(0.95 0.01 220); font-size: 14px; font-weight: 500; font-family: Geist, ui-sans-serif, system-ui; cursor: pointer; transition: background 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-outline:hover { background: oklch(0.22 0.025 250); } .ds-btn-outline:focus-visible { outline: none; box-shadow: 0 0 0 3px oklch(0.72 0.13 195 / 50%); }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Card de serviço com ícone, título e descrição; acende no hover.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-icon\">◆</div><div class=\"ds-card-title\">Desenvolvimento sob medida</div><div class=\"ds-card-desc\">Sites e aplicativos construídos para o seu processo, não o inverso.</div></div>",
+      "css": ".ds-card { border-radius: 14px; padding: 16px; background: oklch(0.19 0.025 250 / 60%); border: 1px solid oklch(1 0 0 / 6%); font-family: Geist, ui-sans-serif, system-ui; transition: background 0.25s, border-color 0.25s; } .ds-card:hover { background: oklch(0.19 0.025 250); border-color: oklch(0.72 0.13 195 / 40%); } .ds-card-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px; background: oklch(0.72 0.13 195 / 10%); color: oklch(0.72 0.13 195); margin-bottom: 8px; transition: transform 0.25s; } .ds-card:hover .ds-card-icon { transform: scale(1.1); } .ds-card-title { font-size: 16px; font-weight: 500; color: oklch(0.95 0.01 220); } .ds-card-desc { margin-top: 8px; font-size: 14px; line-height: 1.6; color: oklch(0.65 0.03 235); }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo de texto padrão do formulário de contato.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Seu nome\" />",
+      "css": ".ds-input { height: 32px; width: 100%; padding: 4px 10px; border-radius: 10px; border: 1px solid oklch(1 0 0 / 12%); background: transparent; color: oklch(0.95 0.01 220); font-size: 14px; font-family: Geist, ui-sans-serif, system-ui; } .ds-input::placeholder { color: oklch(0.65 0.03 235); } .ds-input:focus-visible { outline: none; border-color: oklch(0.72 0.13 195); box-shadow: 0 0 0 3px oklch(0.72 0.13 195 / 50%); }"
+    },
+    {
+      "name": "Site Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Link de navegação do header sticky.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Serviços</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 24px; align-items: center; } .ds-nav-link { font-size: 14px; color: oklch(0.65 0.03 235); text-decoration: none; font-family: Geist, ui-sans-serif, system-ui; transition: color 0.15s cubic-bezier(0.16,1,0.3,1); } .ds-nav-link:hover { color: oklch(0.95 0.01 220); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signal Console",
+    "overview": "O site é dark-first por construção (html.dark fixo, sem toggle) — fundo quase-preto azulado com um único acento teal/ciano funcionando como sinal vivo sobre uma superfície calma. Isso conversa com o posicionamento de produto (dev de software + análise de dados no mesmo time): a superfície escura e o acento único remetem a um console de leitura de dados — precisão, não decoração. O sistema é plano por padrão: profundidade vem de contorno de 1px, nunca de sombra. Tipografia é uma única família (Geist) trabalhada por peso e tamanho. Movimento é spring crítico, sem bounce.",
+    "keyCharacteristics": [
+      "Dark-only por padrão (sem light mode exposto ao visitante hoje)",
+      "Um único acento de cor (teal/ciano), usado com moderação",
+      "Profundidade via contorno de 1px, nunca sombra",
+      "Tipografia única (Geist) variando por peso/tamanho",
+      "Movimento spring crítico (sem bounce), sempre com prefers-reduced-motion respeitado"
+    ],
+    "rules": [
+      {
+        "name": "The Hairline Rule",
+        "body": "Profundidade nunca vem de box-shadow; vem de um contorno de 1px em foreground/10%.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Signal Rule",
+        "body": "A cor de acento (teal) aparece em no máximo um elemento por seção.",
+        "section": "colors"
+      },
+      {
+        "name": "The Weight-Not-Family Rule",
+        "body": "Toda hierarquia tipográfica é resolvida trocando peso/tamanho da mesma Geist, nunca uma segunda família.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Sombra não faz parte do vocabulário visual atual; prefira contraste de hairline ou luminosidade antes de introduzir box-shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do usar o acento teal em no máximo um elemento de destaque por seção.",
+      "Do resolver hierarquia tipográfica com peso/tamanho da Geist, nunca uma segunda família.",
+      "Do usar .hero-enter (CSS puro) para conteúdo candidato a LCP; Reveal/RevealGroup só abaixo da dobra.",
+      "Do transmitir profundidade com hairline de 1px, nunca com box-shadow.",
+      "Do respeitar prefers-reduced-motion em qualquer animação nova."
+    ],
+    "donts": [
+      "Don't introduzir uma segunda cor de acento competindo com o teal na mesma tela.",
+      "Don't adicionar box-shadow a cards ou painéis.",
+      "Don't animar conteúdo acima da dobra com Framer Motion (Reveal/RevealGroup).",
+      "Don't usar bounce em transições de entrada."
+    ]
+  }
+}

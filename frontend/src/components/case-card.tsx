@@ -17,7 +17,13 @@ export function CaseCard({
     <Card className="overflow-hidden border-border/60 bg-card/60 py-0">
       {image ? (
         <div className="relative aspect-video w-full">
-          <Image src={image} alt={title} fill className="object-cover" />
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
         </div>
       ) : (
         <div className="aspect-video w-full bg-muted/50" />
