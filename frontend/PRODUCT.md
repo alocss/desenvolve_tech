@@ -33,7 +33,7 @@ Nome: Desenvolve Tech. Nenhuma outra restrição de marca (voz, paleta, tipograf
 
 ## Evidence on Hand
 
-Ainda não há cases, depoimentos ou clientes reais publicáveis. O portfólio (Issue #6) não deve fabricar prova social — a ausência de cases é um fato a registrar, não a preencher com conteúdo inventado.
+Há 3 projetos reais publicáveis, cadastrados em `frontend/src/lib/cases.ts` e exibidos em `/portfolio` e na home: Allction (site institucional), Nutricionista Crislane Oliveira (site institucional) e House Burger (loja online). Ainda não há depoimentos de clientes publicáveis — não fabricar prova social além do que está registrado aqui.
 
 ## Product Principles
 
