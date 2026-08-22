@@ -117,8 +117,8 @@ export default function Home() {
               Conheça alguns dos nossos trabalhos
             </h2>
             <p className="mt-4 text-muted-foreground text-balance">
-              Confira alguns projetos e soluções desenvolvidos pela nossa equipe e conheça de
-              perto a qualidade do nosso trabalho.
+              Confira alguns projetos e soluções desenvolvidos pela nossa equipe e conheça de perto
+              a qualidade do nosso trabalho.
             </p>
           </div>
 
@@ -148,7 +148,12 @@ export default function Home() {
           )}
 
           <div className="mt-10 text-center">
-            <Button size="lg" variant="outline" render={<Link href="/portfolio" />} nativeButton={false}>
+            <Button
+              size="lg"
+              variant="outline"
+              render={<Link href="/portfolio" />}
+              nativeButton={false}
+            >
               Ver portfólio completo
             </Button>
           </div>
