@@ -21,13 +21,46 @@ describe('Home', () => {
     expect(screen.getByText('Análise de dados')).toBeDefined();
   });
 
-  it('tem CTA de orçamento e de serviços', () => {
+  it('tem CTA de orçamento e de portfólio no hero', () => {
     render(<Home />);
     expect(screen.getByText('Solicitar orçamento').closest('a')?.getAttribute('href')).toBe(
       '/contato',
     );
-    expect(screen.getByText('Conhecer os serviços').closest('a')?.getAttribute('href')).toBe(
-      '/servicos',
+    expect(screen.getAllByText('Ver nossos projetos')[0].closest('a')?.getAttribute('href')).toBe(
+      '/portfolio',
+    );
+  });
+
+  it('renderiza a nova seção de apresentação institucional', () => {
+    render(<Home />);
+    expect(
+      screen.getByRole('heading', {
+        level: 2,
+        name: 'Soluções pensadas para transformar ideias em resultados',
+      }),
+    ).toBeDefined();
+  });
+
+  it('renderiza o teaser de portfólio (sem cases reais ainda) com CTA para a página completa', () => {
+    render(<Home />);
+    expect(screen.getByText('Nossos primeiros projetos estão em desenvolvimento.')).toBeDefined();
+    expect(screen.getByText('Ver portfólio completo').closest('a')?.getAttribute('href')).toBe(
+      '/portfolio',
+    );
+  });
+
+  it('renderiza a seção de diferenciais', () => {
+    render(<Home />);
+    expect(screen.getByText('Dev e dados no mesmo time')).toBeDefined();
+  });
+
+  it('renderiza a chamada final de contato', () => {
+    render(<Home />);
+    expect(
+      screen.getByRole('heading', { level: 2, name: 'Tem um projeto em mente? Vamos conversar.' }),
+    ).toBeDefined();
+    expect(screen.getByText('Entrar em contato').closest('a')?.getAttribute('href')).toBe(
+      '/contato',
     );
   });
 });
