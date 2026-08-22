@@ -41,9 +41,9 @@ describe('Home', () => {
     ).toBeDefined();
   });
 
-  it('renderiza o teaser de portfólio (sem cases reais ainda) com CTA para a página completa', () => {
+  it('renderiza os cases reais no teaser de portfólio, com CTA para a página completa', () => {
     render(<Home />);
-    expect(screen.getByText('Nossos primeiros projetos estão em desenvolvimento.')).toBeDefined();
+    expect(screen.getByText('Allction')).toBeDefined();
     expect(screen.getByText('Ver portfólio completo').closest('a')?.getAttribute('href')).toBe(
       '/portfolio',
     );
