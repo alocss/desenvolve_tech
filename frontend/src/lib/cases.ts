@@ -20,11 +20,11 @@ export const cases: Case[] = [
     image: '/portfolio/allction.png',
   },
   {
-    slug: 'nutri-crislane-oliveira',
-    title: 'Nutricionista Crislane Oliveira',
-    summary: 'Sua saúde começa com a escolha certa no prato.',
+    slug: 'solucoes-eolicas',
+    title: 'Soluções Eólicas do Brasil',
+    summary: 'Engenharia que move o vento.',
     tags: ['Site institucional'],
-    image: '/portfolio/crislane-oliveira.png',
+    image: '/portfolio/solucoes-eolicas.png',
   },
   {
     slug: 'house-burger',
@@ -32,13 +32,6 @@ export const cases: Case[] = [
     summary: 'A noite pede House.',
     tags: ['Loja online'],
     image: '/portfolio/house-burger.png',
-  },
-  {
-    slug: 'solucoes-eolicas',
-    title: 'Soluções Eólicas do Brasil',
-    summary: 'Engenharia que move o vento.',
-    tags: ['Site institucional'],
-    image: '/portfolio/solucoes-eolicas.png',
   },
   {
     slug: 'autoprime',
