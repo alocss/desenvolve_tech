@@ -14,6 +14,7 @@ export default function Home() {
   return (
     <main id="main-content" className="flex min-h-screen flex-col">
       <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-6 text-center">
+        <div aria-hidden className="hero-grid pointer-events-none absolute inset-0 -z-20" />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,color-mix(in_oklch,var(--primary),transparent_82%),transparent)]"
@@ -22,7 +23,7 @@ export default function Home() {
           <p className="text-sm font-medium tracking-wide text-primary uppercase">
             Desenvolve Tech
           </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
+          <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight text-balance sm:text-7xl">
             Tecnologia sob medida para o seu negócio crescer
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground text-balance">

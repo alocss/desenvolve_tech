@@ -174,3 +174,18 @@
     animation: none;
   }
 }
+
+/**
+ * Grid técnico do hero — linguagem visual de engenharia/precisão (ver
+ * DESIGN.md: personalidade "ousada e técnica", ref. Linear/Vercel/Stripe).
+ * Só os tokens existentes (--border, --primary); sem cor nova. A grade some
+ * gradualmente das bordas para o centro via mask, para não competir com o
+ * texto do hero.
+ */
+.hero-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 0%, transparent 75%);
+}

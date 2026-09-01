@@ -6,9 +6,13 @@ type Case = {
   image?: string;
 };
 
-/**
- * Cases reais entram aqui conforme forem entregues — nenhum dado
- * placeholder/fabricado. Enquanto vazio, a página de portfólio mostra
- * um estado vazio honesto (ver frontend/src/app/portfolio/page.tsx).
- */
-export const cases: Case[] = [];
+export const cases: Case[] = [
+  {
+    slug: 'solucoes-eolicas',
+    title: 'Soluções Eólicas do Brasil',
+    summary:
+      'Site institucional para empresa de engenharia eólica — instalação, manutenção, comissionamento e fornecimento técnico para a indústria eólica.',
+    tags: ['Desenvolvimento de sites'],
+    image: '/portfolio/solucoes-eolicas.jpg',
+  },
+];

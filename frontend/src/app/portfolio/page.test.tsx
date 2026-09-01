@@ -8,9 +8,8 @@ describe('Portfolio', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'Portfólio' })).toBeDefined();
   });
 
-  it('mostra o estado vazio honesto quando não há cases', () => {
+  it('renderiza os cases cadastrados', () => {
     render(<Portfolio />);
-    expect(screen.getByText('Novos projetos em construção')).toBeDefined();
-    expect(screen.getByText('Conhecer os serviços')).toBeDefined();
+    expect(screen.getByText('Soluções Eólicas do Brasil')).toBeDefined();
   });
 });
