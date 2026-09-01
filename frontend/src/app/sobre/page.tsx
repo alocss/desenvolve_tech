@@ -1,6 +1,7 @@
 import { Handshake, LineChart, Search, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
-import { RevealGroup, RevealItem } from '@/components/reveal';
+import Image from 'next/image';
+import { Reveal, RevealGroup, RevealItem } from '@/components/reveal';
 import { ServiceCard } from '@/components/service-card';
 
 export const metadata: Metadata = {
@@ -61,6 +62,33 @@ export default function Sobre() {
             complexidade desnecessária, sem prometer o que não vamos entregar.
           </p>
         </div>
+      </section>
+
+      <section className="px-6 py-16">
+        <Reveal className="mx-auto max-w-3xl">
+          <div className="grid items-center gap-8 rounded-xl border border-border/60 bg-card/40 p-8 sm:grid-cols-[minmax(0,180px)_1fr] sm:p-10">
+            <div className="relative mx-auto aspect-[4/5] w-40 overflow-hidden rounded-xl sm:w-full">
+              <Image
+                src="/team/alex-ribeiro.jpeg"
+                alt="Alex Ribeiro, fundador da Desenvolve Tech"
+                fill
+                sizes="180px"
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="text-center sm:text-left">
+              <p className="text-xs font-medium tracking-wide text-primary uppercase">Fundador</p>
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+                Alex Ribeiro
+              </h2>
+              <p className="mt-4 text-muted-foreground text-balance">
+                Por trás de cada projeto da Desenvolve Tech está a mesma pessoa que constrói o
+                sistema e analisa os dados que ele gera — sem repasse entre fornecedores diferentes.
+                Essa é a aposta da empresa: tecnologia sob medida, do código ao resultado.
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <section className="px-6 py-16 sm:py-24">
