@@ -13,6 +13,12 @@ describe('Sobre', () => {
     expect(screen.getByText('Nossa missão')).toBeDefined();
   });
 
+  it('renderiza a apresentação do fundador com foto', () => {
+    render(<Sobre />);
+    expect(screen.getByRole('heading', { level: 2, name: 'Alex Ribeiro' })).toBeDefined();
+    expect(screen.getByAltText('Alex Ribeiro, fundador da Desenvolve Tech')).toBeDefined();
+  });
+
   it('renderiza os 4 princípios de como trabalhamos', () => {
     render(<Sobre />);
     expect(screen.getByText('Começamos pelo problema, não pela tecnologia')).toBeDefined();

@@ -1,9 +1,11 @@
-import { FolderKanban, Gauge, Layers, TrendingUp, Workflow } from 'lucide-react';
+import { FolderKanban, Gauge, Layers, Sparkles, TrendingUp, Workflow } from 'lucide-react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { CaseCard } from '@/components/case-card';
 import { Reveal, RevealGroup, RevealItem } from '@/components/reveal';
 import { ServiceCard } from '@/components/service-card';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cases } from '@/lib/cases';
 import { services } from '@/lib/services';
@@ -42,35 +44,64 @@ const differentiators = [
 
 export default function Home() {
   return (
-    <main id="main-content" className="flex min-h-screen flex-col">
-      <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-6 text-center">
+    <main id="main-content" className="home-theme flex min-h-screen flex-col">
+      <section className="relative flex min-h-[90vh] items-center overflow-hidden px-6 py-20">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,color-mix(in_oklch,var(--primary),transparent_82%),transparent)]"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_65%_55%_at_78%_15%,color-mix(in_oklch,var(--primary),transparent_68%),transparent)]"
         />
-        <div className="hero-enter flex flex-col items-center">
-          <p className="text-sm font-medium tracking-wide text-primary uppercase">
-            Desenvolve Tech
-          </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
-            Tecnologia sob medida para o seu negócio crescer
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-muted-foreground text-balance">
-            Desenvolvemos sites, aplicativos e soluções tecnológicas guiadas por dados — para
-            empresas e prestadores de serviço que querem resultado, não só presença digital.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" render={<Link href="/contato" />} nativeButton={false}>
-              Solicitar orçamento
-            </Button>
-            <Button
-              size="lg"
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1fr_288px]">
+          <div className="hero-enter text-center lg:text-left">
+            <Badge
               variant="outline"
-              render={<Link href="/portfolio" />}
-              nativeButton={false}
+              className="h-auto gap-1.5 rounded-full border-primary/30 bg-primary/10 px-3 py-1.5 text-primary"
             >
-              Ver nossos projetos
-            </Button>
+              <Sparkles />
+              Sites, apps e sistemas guiados por dados
+            </Badge>
+            <h1 className="mt-5 max-w-2xl text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
+              Tecnologia sob medida para <span className="text-primary">o seu negócio crescer</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-muted-foreground text-balance lg:mx-0">
+              Desenvolvemos sites, aplicativos e soluções tecnológicas guiadas por dados — para
+              empresas e prestadores de serviço que querem resultado, não só presença digital.
+            </p>
+            <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+              <Button
+                size="lg"
+                className="rounded-full px-6"
+                render={<Link href="/contato" />}
+                nativeButton={false}
+              >
+                Solicitar orçamento
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-6"
+                render={<Link href="/portfolio" />}
+                nativeButton={false}
+              >
+                Ver nossos projetos
+              </Button>
+            </div>
+          </div>
+
+          <div className="hero-enter-photo relative mx-auto aspect-[4/5] w-full max-w-72">
+            <div
+              aria-hidden
+              className="absolute -inset-8 -z-10 rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,var(--primary),transparent_40%),transparent_70%)] blur-2xl"
+            />
+            <div className="relative size-full overflow-hidden rounded-3xl ring-1 ring-primary/25">
+              <Image
+                src="/team/alex-ribeiro.jpeg"
+                alt="Alex Ribeiro, fundador da Desenvolve Tech"
+                fill
+                priority
+                sizes="288px"
+                className="object-cover object-top"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -151,6 +182,7 @@ export default function Home() {
             <Button
               size="lg"
               variant="outline"
+              className="rounded-full px-6"
               render={<Link href="/portfolio" />}
               nativeButton={false}
             >
@@ -186,7 +218,12 @@ export default function Home() {
             Entre em contato e conte um pouco sobre o que você precisa. Estamos prontos para
             entender sua ideia e apresentar a melhor solução para o seu projeto.
           </p>
-          <Button size="lg" className="mt-8" render={<Link href="/contato" />} nativeButton={false}>
+          <Button
+            size="lg"
+            className="mt-8 rounded-full px-6"
+            render={<Link href="/contato" />}
+            nativeButton={false}
+          >
             Entrar em contato
           </Button>
         </div>

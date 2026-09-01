@@ -11,7 +11,6 @@ describe('Portfolio', () => {
   it('renderiza os cases cadastrados', () => {
     render(<Portfolio />);
     expect(screen.getByText('Allction')).toBeDefined();
-    expect(screen.getByText('Nutricionista Crislane Oliveira')).toBeDefined();
     expect(screen.getByText('House Burger')).toBeDefined();
     expect(screen.getByText('Soluções Eólicas do Brasil')).toBeDefined();
     expect(screen.getByText('AutoPrime Veículos')).toBeDefined();

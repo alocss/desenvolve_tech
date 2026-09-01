@@ -172,3 +172,42 @@
     animation: none;
   }
 }
+
+/**
+ * Variante sem `filter: blur()` para uso em fotos grandes acima da dobra.
+ * Borrar uma imagem opaca grande é um rasterize caro (ao contrário de texto,
+ * onde a área borrada é pequena) e atrasa o LCP sob CPU throttling — medido
+ * em ~2s de "Render Delay" extra no Lighthouse ao reusar `.hero-enter` puro
+ * numa foto. Mesma duração/easing, só sem o canal de blur.
+ */
+@keyframes hero-enter-photo {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-enter-photo {
+  animation: hero-enter-photo var(--duration-slow) var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter-photo {
+    animation: none;
+  }
+}
+
+/**
+ * Acento azul elétrico, escopado à Home (Issue #38) enquanto o rollout pro
+ * resto do site não é aprovado. Redefine --primary só dentro de .home-theme;
+ * header/footer (fora do <main>) continuam no teal global.
+ */
+.home-theme {
+  --primary: oklch(0.7 0.17 253);
+  --primary-foreground: oklch(0.16 0.03 253);
+  --ring: oklch(0.7 0.17 253);
+}

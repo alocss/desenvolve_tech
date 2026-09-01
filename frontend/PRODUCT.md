@@ -33,7 +33,7 @@ Nome: Desenvolve Tech. Nenhuma outra restrição de marca (voz, paleta, tipograf
 
 ## Evidence on Hand
 
-Há 5 projetos reais publicáveis, cadastrados em `frontend/src/lib/cases.ts` e exibidos em `/portfolio` (a home mostra os 3 primeiros): Allction (site institucional), Nutricionista Crislane Oliveira (site institucional), House Burger (loja online), Soluções Eólicas do Brasil (site institucional, no ar em solucoes-eolicas.vercel.app) e AutoPrime Veículos (sistema sob medida — loja digital de veículos com painel administrativo). Ainda não há depoimentos de clientes publicáveis — não fabricar prova social além do que está registrado aqui.
+Há 4 projetos reais publicáveis, cadastrados em `frontend/src/lib/cases.ts` e exibidos em `/portfolio` (a home mostra os 3 primeiros): Allction (site institucional), Soluções Eólicas do Brasil (site institucional, no ar em solucoes-eolicas.vercel.app), House Burger (loja online) e AutoPrime Veículos (sistema sob medida — loja digital de veículos com painel administrativo). Ainda não há depoimentos de clientes publicáveis — não fabricar prova social além do que está registrado aqui.
 
 ## Product Principles
 
