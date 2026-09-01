@@ -33,4 +33,18 @@ export const cases: Case[] = [
     tags: ['Loja online'],
     image: '/portfolio/house-burger.png',
   },
+  {
+    slug: 'solucoes-eolicas',
+    title: 'Soluções Eólicas do Brasil',
+    summary: 'Engenharia que move o vento.',
+    tags: ['Site institucional'],
+    image: '/portfolio/solucoes-eolicas.png',
+  },
+  {
+    slug: 'autoprime',
+    title: 'AutoPrime Veículos',
+    summary: 'O carro certo está aqui, não em mil abas abertas.',
+    tags: ['Sistema sob medida'],
+    image: '/portfolio/autoprime.png',
+  },
 ];
