@@ -31,6 +31,11 @@ describe('Home', () => {
     );
   });
 
+  it('renderiza a foto do fundador no hero', () => {
+    render(<Home />);
+    expect(screen.getByAltText('Alex Ribeiro, fundador da Desenvolve Tech')).toBeDefined();
+  });
+
   it('renderiza a nova seção de apresentação institucional', () => {
     render(<Home />);
     expect(
